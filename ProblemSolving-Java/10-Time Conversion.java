@@ -21,7 +21,7 @@ class Result {
 
     public static String timeConversion(String s) {
     // Write your code here
-     if(s.charAt(8)=='P'){
+    if(s.charAt(8)=='P'){
 
         String portion = s.substring(0,8);
         String[] times = portion.split(":");
@@ -40,6 +40,23 @@ class Result {
          return s.substring(0,8);
      }
     
-    
-    
-    }}
+    }
+
+}
+
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+
+        String s = bufferedReader.readLine();
+
+        String result = Result.timeConversion(s);
+
+        bufferedWriter.write(result);
+        bufferedWriter.newLine();
+
+        bufferedReader.close();
+        bufferedWriter.close();
+    }
+}
